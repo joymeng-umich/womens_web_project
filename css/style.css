@@ -2,9 +2,10 @@ body {
     padding: 20px;
     background-color: beige;
     font-size: 125%;
+    line-height: 1.2;
 }
 h1 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Sofia", sans-serif;
     color:black;
 }
 
@@ -24,7 +25,7 @@ li {
     float: right;
   }
   
-li a {
+li a{
     display: block;
     color: white;
     text-align: center;
@@ -32,6 +33,37 @@ li a {
     text-decoration: none;
   }
   
-li a:hover {
+li a:hover{
     background-color: #111;
   }
+
+
+li a.current{
+    font-size: large;
+    text-decoration: wavy underline;
+    text-underline-offset: 4px;
+    text-transform: uppercase;
+    text-decoration-color: white;
+    /* Set text decoration, transformation, and underline properties */
+}
+
+
+img{
+  display: block;
+  width:300px;
+  padding: 5px;
+  margin: 10px 10px 0px 10px;
+  border-radius: 20px;
+}
+
+img:nth-child(2n){
+  
+  width:400px;
+  padding: 5px;
+  margin: 10px 10px 0px 10px;
+  border-radius: 50px;
+}
+
+img:hover{
+  border: 5px solid black;
+}
