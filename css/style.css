@@ -4,6 +4,23 @@ body {
     font-size: 125%;
     line-height: 1.2;
 }
+
+a.skip{
+  background: white;
+  padding: 6px;
+  -webkit-transition: top 1s ease-out;
+  transition: left 1s ease-out;
+  z-index: 1;
+  position: absolute;
+  left: -400px;
+  top: -200px;
+}
+
+a.skip:focus{
+  left: 0px;
+  top: 20px;
+}
+
 h1 {
     font-family: "Sofia", sans-serif;
     color:black;
