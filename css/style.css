@@ -1,10 +1,23 @@
 body {
     padding: 20px;
     background-color: beige;
-    font-size: 125%;
+    font-size: large;
     line-height: 1.2;
 }
 
+h1{
+  font-size: larger;
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom:10px;
+}
+
+ul{
+  display:flex;
+  width: 100%;
+  flex-direction: column;
+
+}
 a.skip{
   background: white;
   padding: 6px;
@@ -84,3 +97,18 @@ img:nth-child(2n){
 img:hover{
   border: 5px solid black;
 }
+
+img#about{
+  display: none;
+}
+
+dt{
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-family: monospace;
+  font-size: 24px;
+  text-decoration: underline;
+  text-underline-offset: 7px;
+  border-top: 10px solid #333;
+}
+
