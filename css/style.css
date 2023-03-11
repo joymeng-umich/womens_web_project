@@ -18,8 +18,8 @@ ul{
   width: 100%;
   flex-direction: column;
   border-radius: 5px;
-
 }
+
 a.skip{
   background: white;
   padding: 6px;
@@ -41,17 +41,26 @@ h1 {
     color:black;
 }
 
+div.boarded{
+  margin-top: 10px;
+  background-image: url("../images/bg2.jpeg");
+  background-position: center;
+
+}
+
 div{
   border:#333 solid 1px;
   border-radius: 5px;
   display:flex;
   flex-direction: column;
 
+
 }
 p{
     padding: 6px;
     /* margin-top: 5px; */
     text-align: left;
+    /* opacity: 100%; */
 
 }
 
@@ -103,6 +112,13 @@ img{
   border-radius: 15px;
   padding: 5px;
   margin-bottom: 2px;
+  transition-property: border;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+}
+img:hover{
+  border: 5px solid black;
 }
 
 /* main img:nth-child(2n){
@@ -111,10 +127,6 @@ img{
 /* this is not working, is that because the img don't share the same parent div?  */
 
 
-
-img:hover{
-  border: 5px solid black;
-}
 
 img#about{
   display: none;
@@ -173,6 +185,7 @@ footer{
   flex-direction: column;
   align-items: flex-end;
 }
+
 footer p{
   font-size: small;
   line-height: 1;
@@ -188,12 +201,7 @@ footer a{
   flex-direction: row;
 } */
 
-dl p{
-  padding: 0px;
-  grid-column: 2 / 3;
 
-
-}
 
 dl div{
   display: grid;
@@ -217,6 +225,10 @@ dl dd{
   grid-column: 1 / 2;
   /* border-bottom: solid 1px #333; */
 }
+dl p{
+  padding: 0px;
+  grid-column: 2 / 3;
+}
 
 
 div.disclaimer{
@@ -230,3 +242,12 @@ div.disclaimer{
 }
 
 
+@media (prefers-reduced-motion: reduce) {
+  img{
+    animation:none;
+  }
+
+  img:hover {
+    border:none;
+  }
+}
