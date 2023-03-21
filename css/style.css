@@ -18,6 +18,8 @@ ul{
   width: 100%;
   flex-direction: column;
   border-radius: 5px;
+  /* transition: all 2s linear; */
+
 }
 
 a.skip{
@@ -46,6 +48,7 @@ div.boarded{
   background-image: url("../images/bg2.jpeg");
   background-position: center;
 
+
 }
 
 div{
@@ -53,9 +56,10 @@ div{
   border-radius: 5px;
   display:flex;
   flex-direction: column;
-
+  /* transition: all linear 3s; */
 
 }
+
 p{
     padding: 6px;
     /* margin-top: 5px; */
@@ -130,6 +134,7 @@ img:hover{
 
 img#about{
   display: none;
+  transition: all .5s ease;
 }
 
 dt{
@@ -254,5 +259,83 @@ div.disclaimer{
 
   img:hover {
     border:none;
+  }
+}
+
+@media screen and (min-width: 768px){
+  img#about{
+    display: block;
+    grid-column: 1 / 4;
+  }
+
+  ul{
+    flex-direction: row-reverse;
+
+  }
+
+  header h1{
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+
+  header p{
+    text-align: center;
+  }
+
+
+  main{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    margin:0px 30px 0px 30px;
+    column-gap: 20px;
+    justify-content: center;
+  }
+
+  main div{
+    margin-bottom: 10px;
+  }
+  main.index{
+
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: auto;
+  }
+  main.dict{
+    display: block;
+  }
+  dl{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    margin:0px 30px 0px 30px;
+    column-gap: 50px;
+    justify-content: center; 
+  }
+
+  /* dl div:nth-child(2n){
+    grid-column: 2 / 3;
+  } */
+
+  h2{
+    position: relative;
+    width: 100%;
+    padding:0;
+    left:0;
+    border-top:#111 solid 3px;
+  }
+
+  div.boarded{
+    width: 100%;
+    background-image: none;
+    padding:0px 25px 0px 25px;
+    margin-top: 0px;
+    grid-column: 1 / span 3;
+
+    justify-self: center;
+
+  }
+
+  .disclaimer{
+    grid-column: 1 / span 3;
+
+    justify-self: center;
   }
 }
