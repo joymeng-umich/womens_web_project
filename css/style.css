@@ -5,21 +5,22 @@ body {
     line-height: 1.2;
 }
 
+#content_progress{
+  display: none;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+}
+
 h1{
   font-size: larger;
   text-align: center;
   font-weight: bolder;
   margin-top: 15px;
   
-}
-
-ul{
-  display:flex;
-  width: 100%;
-  flex-direction: column;
-  border-radius: 5px;
-  /* transition: all 2s linear; */
-
 }
 
 a.skip{
@@ -43,13 +44,8 @@ h1 {
     color:black;
 }
 
-div.boarded{
-  margin-top: 10px;
-  background-image: url("../images/bg2.jpeg");
-  background-position: center;
 
 
-}
 
 div{
   border:#333 solid 1px;
@@ -57,6 +53,14 @@ div{
   display:flex;
   flex-direction: column;
   /* transition: all linear 3s; */
+
+
+}
+
+div.boarded{
+  margin-top: 10px;
+  background-image: url("../images/bg2.jpeg");
+  background-position: center;
 
 }
 
@@ -68,22 +72,21 @@ p{
 
 }
 
-header ul {
+ul{
+  display:flex; 
+
+}
+
+header ul{
+    flex-direction: column;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    border-radius: 5px;
   }
   
-/* li {
-    float: right;
-  } */
-  
-/* li:nth-child(2){
-  border
-
-} */
 
 li a{
     display: block;
@@ -99,7 +102,7 @@ li a:hover{
 
 
 li a.current{
-    font-size: large;
+    /* font-size: large; */
     text-decoration:  underline;
     text-underline-offset: 4px;
     text-transform: uppercase;
@@ -109,9 +112,8 @@ li a.current{
 }
 
 
-
 img{
-  width: 85vw;
+  width: max-content;
   align-self: center;
   border-radius: 15px;
   padding: 5px;
@@ -120,22 +122,25 @@ img{
   transition-duration: 0.3s;
   transition-timing-function: linear;
   transition-delay: 0s;
+  border: none;
 }
+
 img:hover{
   border: 5px solid black;
+  
 }
 
-/* main img:nth-child(2n){
-
-} */
-/* this is not working, is that because the img don't share the same parent div?  */
 
 
-
-img#about{
+.index img {
   display: none;
-  transition: all .5s ease;
 }
+
+img:nth-of-type(2n){
+  width:10px;
+}
+
+
 
 dt{
   padding-top: 3px;
@@ -174,18 +179,19 @@ h3{
   font-weight: bold;
 }
 
-div ul{
-  display: flex;
+#main ul{
   flex-direction: column;
+  align-items: center;
 }
 
-div li{
+#main li{
   color:beige;
   padding:1px 6px 1px 6px;
   margin:4px 3px 0px 3px;
-
+  width:fit-content;
   background-color: #555;
   border-radius: 8px;
+  text-align: center;
   
 }
 
@@ -211,9 +217,12 @@ footer a{
   flex-direction: row;
 } */
 
+dl{
+  display: flex;
+  flex-direction: column;
+}
 
-
-dl div{
+dl>div{
   display: grid;
   grid-template-columns: 100px auto;
   grid-template-rows: auto auto auto;
@@ -231,11 +240,11 @@ dl dt{
   grid-row: 1 / 2;
 }
 
-dl dd{
+dl dd:nth-of-type(odd){
   grid-column: 1 / 2;
   /* border-bottom: solid 1px #333; */
 }
-dl p{
+dl dd:nth-of-type(even){
   padding: 0px;
   grid-column: 2 / 3;
 }
@@ -252,6 +261,7 @@ div.disclaimer{
 }
 
 
+
 @media (prefers-reduced-motion: reduce) {
   img{
     animation:none;
@@ -266,11 +276,18 @@ div.disclaimer{
   img#about{
     display: block;
     grid-column: 1 / 4;
+    border-radius:0;
+
+
+  }
+  img#about:hover{
+
+    border:none;
+
   }
 
-  ul{
+  header ul{
     flex-direction: row-reverse;
-
   }
 
   header h1{
@@ -288,7 +305,8 @@ div.disclaimer{
     grid-template-columns: 40% 40%;
     margin:0px 30px 0px 30px;
     column-gap: 20px;
-    justify-content: center;
+    /* justify-content: center;
+    justify-items: center; */
   }
 
   main div{
@@ -338,4 +356,48 @@ div.disclaimer{
 
     justify-self: center;
   }
+
+  #content_progress {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 3px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    color: #555;
+  }
+  
+  #content_progress::-webkit-progress-bar {
+    background-color: transparent;
+  }
+  
+  #content_progress::-webkit-progress-value {
+    background-color: #555;
+  }
+  
+  #content_progress::-moz-progress-bar {
+    background-color: #555;
+  }
+
+}
+
+@media screen and (min-width: 1024px){
+  header ul{
+    flex-direction: row;
+  }
+
+  main{
+
+    grid-template-columns: 30% 30% 30%;
+    /* justify-content: center;
+    justify-items: center; */
+  }
+
+
 }
